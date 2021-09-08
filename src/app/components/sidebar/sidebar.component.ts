@@ -7,11 +7,10 @@ import {LoginService} from "../../services/login.service";
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  userLoggedIn: string | null = '';
+
 
   @Output()
   toggleSideBar = new EventEmitter<any>();
-  // toggleUserLoggedIn = new EventEmitter<any>();
 
 
 
@@ -29,14 +28,15 @@ export class SidebarComponent implements OnInit {
   //   this.toggleUserLoggedIn.emit();
   // }
 
+  userLoggedIn(){
+    return this.loginService.getUserLoggedIn();
+  }
 
   login(){
     this.emitToggleSideBar();
-    this.userLoggedIn=this.loginService.getUserLoggedIn();
-    return this.loginService.getUserLoggedIn();
   }
+
   logout(){
-    this.userLoggedIn='';
     this.emitToggleSideBar();
     this.loginService.logOut();
   }
