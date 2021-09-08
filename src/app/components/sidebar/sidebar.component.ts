@@ -7,35 +7,36 @@ import {LoginService} from "../../services/login.service";
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  userLoggedIn: string | null = '';
 
   @Output()
   toggleSideBar = new EventEmitter<any>();
-  userLoggedIn: any;
+  // toggleUserLoggedIn = new EventEmitter<any>();
+
 
 
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
-    this.loginService.getUserLoggedIn()
-      .subscribe(result => {
-        this.userLoggedIn = result;
-        console.log("_______------")
-        console.log(result)
-      })
   }
 
   emitToggleSideBar() {
     this.toggleSideBar.emit()
 
   }
-  login(){
-    // this.userLoggedIn ='ceva';
-    this.emitToggleSideBar();
-    this.userLoggedIn = this.loginService.getUserLoggedIn();
-  }
 
+  // emitUserLoggedIn(){
+  //   this.toggleUserLoggedIn.emit();
+  // }
+
+
+  login(){
+    this.emitToggleSideBar();
+    this.userLoggedIn=this.loginService.getUserLoggedIn();
+    return this.loginService.getUserLoggedIn();
+  }
   logout(){
-    this.userLoggedIn ='';
+    this.userLoggedIn='';
     this.emitToggleSideBar();
     this.loginService.logOut();
   }

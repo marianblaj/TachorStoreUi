@@ -9,7 +9,7 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="https://media-exp3.licdn.com/dms/image/C4D1BAQHxINS0YZXisg/company-background_10000/0/1566082835119?e=2159024400&v=beta&t=1KKCrWVgis2P_Oz-bJAZIYN1LRcHs6WdpVHFp6i6-A8" id="icon" alt="User Icon"/>
+      <img src="http://www.di-chi.org/wp-content/uploads/2018/08/Register-Now-NYSCATE.png" id="icon" alt="User Icon"/>
     </div>
 
     <!-- Login Form -->
@@ -19,13 +19,12 @@
       <input type="text"  [(ngModel)]="email" class="fadeIn second" name="login" placeholder="email">
       <input type="password" id="password" [(ngModel)]="password" class="fadeIn second, inputs" name="login" placeholder="password">
 
-      <input type="submit" class="fadeIn fourth" value="Log In" (click)="register()">
+      <input type="submit" class="fadeIn fourth" value="Register" (click)="register()">
     </form>
-    <h2 *ngIf="error" class="error">Invalid username or password.</h2>
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
-    </div>
+    <h2 *ngIf="error" class="error">{{error}}</h2>
+    <h2 *ngIf="isSuccessful" class="error">Please confirm your email.</h2>
+
+
 
   </div>
 </div>

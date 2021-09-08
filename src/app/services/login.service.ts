@@ -11,6 +11,7 @@ export class User {
   providedIn: 'root'
 })
 export class LoginService {
+  userLoggedIn: string | null | undefined;
 
   constructor(private httpClient :HttpClient) { }
 
@@ -43,8 +44,8 @@ export class LoginService {
   }
 
   getUserLoggedIn(){
-    // @ts-ignore
-    return new Observable(sessionStorage.getItem("username"));
+    this.userLoggedIn = sessionStorage.getItem("username");
+    return this.userLoggedIn;
   }
 
 

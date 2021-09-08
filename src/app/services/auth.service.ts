@@ -11,11 +11,7 @@ export class AuthService {
 
   register(firstName: string, lastName: string, email: string, password: string) {
     return this.httpClient
-      .post<any>("http://localhost:8080/api/v1/registration",
-      { firstName, lastName, email, password })
-      .pipe(
-        map(responseData =>{
-        return responseData;})
-      );
+      .post<string>("http://localhost:8080/api/v1/registration",
+      { firstName, lastName, email, password });
   }
 }

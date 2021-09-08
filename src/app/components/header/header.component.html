@@ -6,9 +6,9 @@
       </button>
       <span routerLink="/products"> Tachor Store </span>
     </div>
-<!--    <h2 *ngIf="userLoggedIn" > Welcome {{userLoggedIn}}. </h2>-->
-<!--    <h2 *ngIf="!userLoggedIn" > Please log in. </h2>-->
-<!--    <button *ngIf="userLoggedIn" (click)="logout()">logout</button>-->
+    <h2 *ngIf="updateUserLogedIn()" > Welcome {{updateUserLogedIn()}}. </h2>
+    <h2 *ngIf="!updateUserLogedIn()" > Please log in. </h2>
+    <button *ngIf="userLoggedIn" (click)="logout()">logout</button>
 
     <div class="rightNavbar">
         <fa-icon [icon]="faCartPlus" routerLink="cart"></fa-icon>

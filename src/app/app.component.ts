@@ -9,9 +9,15 @@ import {Component} from '@angular/core';
 export class AppComponent {
   title = 'curs16-checkpoints';
   sidebarOpened = false;
+  userLogedIn = false;
 
 
   toggleSidebar(event: any) {
     this.sidebarOpened = !this.sidebarOpened;
   }
+
+  togleUserLogedIn(event:any){
+    this.userLogedIn = !this.userLogedIn;
+  }
+
 }

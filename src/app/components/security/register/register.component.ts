@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from "../../../services/auth.service";
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'app-register',
@@ -8,34 +9,37 @@ import {AuthService} from "../../../services/auth.service";
 })
 export class RegisterComponent implements OnInit {
 
-    firstName= '';
-    lastName= '';
-    email= '';
-    password= '';
+  firstName = '';
+  lastName = '';
+  email = '';
+  password = '';
 
   isSuccessful = false;
   isSignUpFailed = false;
   @Input() error: string | null | undefined;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {
+  }
 
   ngOnInit(): void {
   }
 
   register(): void {
-    this.error=null;
+    this.error = null;
 
-    this.authService.register(this.firstName, this.lastName,  this.email, this.password).subscribe(
+    this.authService.register(this.firstName, this.lastName, this.email, this.password).subscribe(
       data => {
-        console.log(this.firstName, this.lastName,  this.email, this.password);
-        console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        this.email = '';
+        this.firstName = '';
+        this.lastName = '';
+        this.password = '';
+
       },
       err => {
-        console.log(this.firstName, this.lastName,  this.email, this.password);
         console.log(err)
-        this.error = err.message;
+        this.error = err.error.message;
         this.isSignUpFailed = true;
       }
     );

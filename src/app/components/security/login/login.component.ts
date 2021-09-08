@@ -1,6 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
 import {LoginService} from "../../../services/login.service";
 import {Router} from "@angular/router";
+import {HeaderComponent} from "../../header/header.component";
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   @Input() error: string | null | undefined;
 
   constructor(private router: Router,
-              private loginservice: LoginService) {
+              private loginservice: LoginService,
+  ) {
   }
 
   ngOnInit() {
