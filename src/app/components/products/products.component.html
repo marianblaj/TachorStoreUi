@@ -1,0 +1,22 @@
+
+<div class="container">
+
+  <ng-container *ngFor="let item of productList">
+    <mat-card class="element-card">
+      <mat-card-header>
+        <img src="{{item.image}}" alt="">
+      </mat-card-header>
+
+      <mat-card-content>
+        <h3>{{item.title}}</h3>
+        <p>{{item.description}}</p>
+        <p><strong style="color: darkslategrey;">Price:</strong> ${{item.price}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="details" mat-button (click)="openDetails(item.description)">Details</button>
+        <button  class="add" (click)=addtocart(item)></button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
+
+</div>

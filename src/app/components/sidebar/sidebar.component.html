@@ -1,0 +1,5 @@
+<mat-nav-list>
+  <a mat-list-item routerLinkActive="list-item-active" *ngIf="!userLoggedIn" (click)="login()"  routerLink="/login">Login</a>
+  <a mat-list-item routerLinkActive="list-item-active" *ngIf="userLoggedIn"  (click)="logout()"  routerLink="/login">Logout</a>
+  <a mat-list-item routerLinkActive="list-item-active" (click)="emitToggleSideBar()" routerLink="/register">Register</a>
+</mat-nav-list>

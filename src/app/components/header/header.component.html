@@ -1,0 +1,23 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <div class="leftNavbar">
+      <button mat-icon-button (click)="emitToggleSideBar()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span routerLink="/products"> Tachor Store </span>
+    </div>
+<!--    <h2 *ngIf="userLoggedIn" > Welcome {{userLoggedIn}}. </h2>-->
+<!--    <h2 *ngIf="!userLoggedIn" > Please log in. </h2>-->
+<!--    <button *ngIf="userLoggedIn" (click)="logout()">logout</button>-->
+
+    <div class="rightNavbar">
+        <fa-icon [icon]="faCartPlus" routerLink="cart"></fa-icon>
+        <div style="font-size: 10px;" class="badge bg-danger prodNumber">{{totalItems}}</div>
+    </div>
+
+
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+

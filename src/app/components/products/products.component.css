@@ -1,0 +1,68 @@
+.element-card {
+  max-width: 200px;
+  display: inline-block;
+  margin: 15px 0 0 15px;
+  background-color: #fff;
+  text-align: center;
+
+}
+
+h3, p {
+  color: darkslategrey;
+  white-space: nowrap;
+  max-width: 250px;
+  overflow: hidden;
+
+}
+
+h3 {
+  margin-top: 25px !important;
+}
+
+.container {
+  margin-bottom: 15px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+.item a:hover {
+  color: darkblue;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin: auto;
+  transition: 0.3s ease-in-out;
+}
+
+img:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+.add, .details {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 50px;
+  width: 150px;
+  border: none;
+  background-color: #fff;
+  color: darkslategrey;
+}
+
+.add {
+  background-image: url(src/assets/btn/emagBtn.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+
+button span {
+  display: none;
+}
+
+
